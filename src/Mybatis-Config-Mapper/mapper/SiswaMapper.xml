@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.id.taqi.mapper.MapperSiswa">
+	<select id="selectWhereSiswa" parameterType="com.id.taqi.model.Siswa"
+		resultType="com.id.taqi.model.Siswa">
+		SELECT * FROM
+		siswa
+		WHERE nik = #{nik}
+	</select>
+	<select id="selectByNama" parameterType="com.id.taqi.model.Siswa"
+		resultType="com.id.taqi.model.Siswa">
+		SELECT * FROM
+		siswa
+		WHERE
+		nama like '%'|| #{nama} ||'%'
+	</select>
+	<insert id="insertSiswa"
+		parameterType="com.id.taqi.model.Siswa">
+		INSERT INTO siswa
+		(nama, jeniskelamin, alamat, kontak)
+    	VALUES
+		(#{nama},#{jeniskelamin},#{alamat},#{kontak}	)
+	</insert>
+	<update id="updateSiswa" parameterType="com.id.taqi.model.Siswa">
+		UPDATE siswa SET
+		nama=#{nama}, jeniskelamin = #{jeniskelamin}, alamat = #{alamat}, kontak = #{kontak}
+		WHERE nik=#{nik}
+	</update>
+	<delete id="deleteByPrimaryKey" parameterType="com.id.taqi.model.Siswa">
+		DELETE FROM siswa
+		WHERE nik = #{nik}
+	</delete>
+</mapper>

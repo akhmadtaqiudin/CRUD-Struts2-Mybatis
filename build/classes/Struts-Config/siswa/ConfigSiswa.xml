@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <package name="appsiswa" extends="struts-default" namespace="/siswa">
+
+    	<action name="InitSiswa" class="com.id.taqi.action.ActionSiswa" method="selectSiswa">
+    		<result name="success">/pages/siswa/index.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    	
+    	<action name="AddSiswa">
+    		<result name="input">/pages/siswa/addSiswa.jsp</result>
+    		<result name="success">/pages/siswa/addSiswa.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    	
+    	<action name="SaveSiswa" class="com.id.taqi.action.ActionSiswa" method="addSiswa">
+    		<result name="input">/pages/siswa/addSiswa.jsp</result>
+    		<result name="success">/pages/siswa/index.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    	
+    	<action name="SelectWhereSiswa" class="com.id.taqi.action.ActionSiswa" method="selectWhereSiswa">
+    		<result name="input">/pages/siswa/editeSiswa.jsp</result>
+    		<result name="success">/pages/siswa/editeSiswa.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    	
+    	
+    	<action name="EditeSiswa" class="com.id.taqi.action.ActionSiswa" method="editeSiswa">
+    		<result name="input">/pages/siswa/editeSiswa.jsp</result>
+    		<result name="success">/pages/siswa/index.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    	
+    	<action name="DeleteSiswa" class="com.id.taqi.action.ActionSiswa" method="deleteSiswa">
+    		<result name="success">/pages/siswa/index.jsp</result>
+    		<result name="error">/pages/siswa/error.jsp</result>
+    	</action>
+    </package>
+</struts>

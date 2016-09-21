@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <package name="appguru" extends="struts-default" namespace="/guru">
+
+    	<action name="InitGuru" class="com.id.taqi.action.ActionGuru" method="selectGuru">
+    		<result name="success">/pages/guru/index.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    	
+    	<action name="SelectWhereGuru" class="com.id.taqi.action.ActionGuru" method="selectWhereGuru">
+    		<result name="input">/pages/guru/editeGuru.jsp</result>
+    		<result name="success">/pages/guru/editeGuru.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    	
+    	<action name="AddGuru">
+    		<result name="input">/pages/guru/addGuru.jsp</result>
+    		<result name="success">/pages/guru/addGuru.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    	
+    	<action name="SaveGuru" class="com.id.taqi.action.ActionGuru" method="addGuru">
+    		<result name="input">/pages/guru/addGuru.jsp</result>
+    		<result name="success">/pages/guru/index.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    	
+    	<action name="EditeGuru" class="com.id.taqi.action.ActionGuru" method="editeGuru">
+    		<result name="input">/pages/guru/editeGuru.jsp</result>
+    		<result name="success">/pages/guru/index.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    	
+    	<action name="DeleteGuru" class="com.id.taqi.action.ActionGuru" method="deleteGuru">
+    		<result name="success">/pages/guru/index.jsp</result>
+    		<result name="error">/pages/guru/error.jsp</result>
+    	</action>
+    </package>
+</struts>

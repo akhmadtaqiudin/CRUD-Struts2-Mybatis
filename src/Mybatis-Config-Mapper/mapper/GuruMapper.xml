@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.id.taqi.mapper.MapperGuru">
+	<select id="selectWhereGuru" parameterType="java.lang.String"
+		resultType="com.id.taqi.model.Guru">
+		SELECT * FROM
+		guru
+		WHERE nama = #{nama}
+	</select>
+	<select id="selectByNama" parameterType="com.id.taqi.model.Guru"
+		resultType="com.id.taqi.model.Guru">
+		SELECT * FROM
+		guru
+		WHERE
+		nama like '%'|| #{nama} ||'%'
+	</select>
+	<insert id="insertGuru"
+		parameterType="com.id.taqi.model.Guru">
+		INSERT INTO guru
+		(nama, jeniskelamin, alamat, kontak)
+    	VALUES
+		(#{nama},
+		#{jeniskelamin},
+		#{alamat},
+		#{kontak}
+		)
+	</insert>
+	<update id="updateGuru" parameterType="com.id.taqi.model.Guru">
+	  UPDATE guru SET
+    	jeniskelamin = #{jeniskelamin},
+    	alamat = #{alamat},
+    	kontak = #{kontak}
+	  WHERE nama = #{nama}
+	</update>
+	<delete id="deleteGuru" parameterType="com.id.taqi.model.Guru">
+		DELETE FROM guru
+		WHERE nama = #{nama}
+	</delete>
+</mapper>
